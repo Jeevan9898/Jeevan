@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    height: 100vh;
+}
+
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+.lead{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.gradient-background {
+    background: linear-gradient(135deg, 
+        #000000,   /* Deep Black */
+        #0a0f0d,   /* Dark Forest Green */
+        #002b1c,   /* Dark Emerald Green */
+        #003a40,   /* Deep Teal */
+        #330033,   /* Dark Purple */
+        #4b0000,   /* Blood Red */
+        #1e0030,   /* Midnight Violet */
+        #008f11    /* Hacker Green */
+    );
+    background-size: 300% 300%;
+    animation: gradient-animation 12s ease-in-out infinite alternate;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: auto;
+}
+
+/* Improved animation with a wavy flow effect */
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 75%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 25%; }
+    100% { background-position: 0% 50%; }
+}
+
+.navbar-nav .nav-item {
+    margin: 0 15px; /* Adjust spacing */
+}
+
+.navbar-nav .nav-link {
+    color: white !important; /* Make text white */
+    font-weight: bold;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
+}
+
