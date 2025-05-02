@@ -143,17 +143,25 @@ body.dark-mode .accordion-body {
 body.dark-mode .accordion-button::after {
     filter: invert(1);
 }
-@keyframes neonFade {
-    0% { background-image: linear-gradient(to right, #ff00ff, #00ffff, #ff9900, #ff0000, #00ff00); }
-    20% { background-image: linear-gradient(to right, #00ffff, #ff9900, #ff0000, #00ff00, #ff00ff); }
-    40% { background-image: linear-gradient(to right, #ff9900, #ff0000, #00ff00, #ff00ff, #00ffff); }
-    60% { background-image: linear-gradient(to right, #ff0000, #00ff00, #ff00ff, #00ffff, #ff9900); }
-    80% { background-image: linear-gradient(to right, #00ff00, #ff00ff, #00ffff, #ff9900, #ff0000); }
-    100% { background-image: linear-gradient(to right, #ff00ff, #00ffff, #ff9900, #ff0000, #00ff00); }
+body.dark-mode .navbar::after,
+body.dark-mode footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Thickness of the line */
+    background: white; /* Pure white */
+    box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
 }
 
-.neon-fade {
-    animation: neonFade 4s infinite linear;
+/* Navbar bottom glow line */
+body.dark-mode .navbar::after {
+    bottom: 0;
+}
+
+/* Footer top glow line */
+body.dark-mode footer::before {
+    top: 0;
 }
 
 
