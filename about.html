@@ -43,24 +43,27 @@
         }
 
      /* Neon effect in Dark Mode */
-     body.dark-mode .navbar {
-        background-color: #111 !important;
-        border-bottom: 3px solid #FFD700; /* Neon Yellow */
-        box-shadow: 0 0 10px #FFD700, 0 0 20px #8A2BE2; /* Glow effect with Purple */
-    }
+    
+body.dark-mode .navbar {
+    background-color: #111 !important;
+    border-bottom: 3px solid #ffffff; /* White */
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* White Glow */
+}
 
-    body.dark-mode footer {
-        background-color: #111 !important;
-        border-top: 3px solid #FFD700; /* Neon Yellow */
-        box-shadow: 0 0 10px #FFD700, 0 0 20px #8A2BE2; /* Glow effect with Purple */
-    }
+body.dark-mode footer {
+    background-color: #111 !important;
+    border-top: 3px solid #ffffff; /* White */
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* White Glow */
+}
+
 
     /* Extra Glow Animation */
     @keyframes neonGlow {
-        0% { box-shadow: 0 0 10px #FFD700, 0 0 20px #8A2BE2; }
-        50% { box-shadow: 0 0 20px #FFD700, 0 0 30px #8A2BE2; }
-        100% { box-shadow: 0 0 10px #FFD700, 0 0 20px #8A2BE2; }
-    }
+    0% { box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; }
+    50% { box-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff; }
+    100% { box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; }
+}
+
 
     body.dark-mode .navbar,
     body.dark-mode footer {
@@ -150,11 +153,9 @@
       opacity: 1;
       visibility: visible;
   }
-
     </style>
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
         <div class="container">
             <b><a class="navbar-brand" href="index.html" style="font-family: Big Shoulders Stencil; font-size: 40px;">My Webpage</a></b>
