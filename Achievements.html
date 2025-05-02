@@ -33,149 +33,154 @@
 </style>
 
     <style>
-        /* Custom styles for toggle button */
-        .toggle-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: #fff;
-            border: none;
-            border-radius: 50%;
-            padding: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+       /* Toggle button styles */
+.toggle-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .toggle-btn i {
-            font-size: 20px;
-            margin: 0 5px;
-        }
+.toggle-btn i {
+    font-size: 20px;
+    margin: 0 5px;
+}
 
-        /* Dark mode styles */
+/* Dark Mode */
+/* Body and Dark Mode Styles */
 body.dark-mode {
     background-color: #121212;
     color: white;
 }
 
-/* Navbar styling with neon green border */
+/* Navbar with white neon line */
 body.dark-mode .navbar {
     background-color: #1c1c1c;
-    border-bottom: 4px solid #39ff14; /* Neon green */
-    box-shadow: 0 0 10px #39ff14;
-    animation: neon-glow 1.5s infinite alternate;
+    border-bottom: 3px solid white; /* White line added */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 
+                0 0 20px rgba(255, 255, 255, 0.3), 
+                0 0 30px rgba(255, 255, 255, 0.1); /* Soft white glow */
+    animation: whiteGlow 2s infinite ease-in-out;
 }
 
-/* Footer styling with neon orange border */
+/* Footer with white neon line */
 body.dark-mode footer {
     background-color: #1c1c1c;
-    border-top: 4px solid #ff6700; /* Neon orange */
-    box-shadow: 0 0 10px #ff6700;
-    animation: neon-glow-orange 1.5s infinite alternate;
+    border-top: 3px solid white; /* White line added */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 
+                0 0 20px rgba(255, 255, 255, 0.3), 
+                0 0 30px rgba(255, 255, 255, 0.1); /* Soft white glow */
+    animation: whiteGlow 2s infinite ease-in-out;
 }
 
-body.dark-mode .text-white {
-    color: #b0b0b0 !important;
+/* Glowing effect for white neon line */
+@keyframes whiteGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 
+                    0 0 20px rgba(255, 255, 255, 0.2), 
+                    0 0 30px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 
+                    0 0 40px rgba(255, 255, 255, 0.6), 
+                    0 0 60px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 
+                    0 0 20px rgba(255, 255, 255, 0.2), 
+                    0 0 30px rgba(255, 255, 255, 0.1);
+    }
 }
 
-body.dark-mode a {
-    color: #b0b0b0 !important;
+/* Links and text in dark mode */
+body.dark-mode a, body.dark-mode .text-white {
+    color: white !important;
 }
 
 body.dark-mode a:hover {
-    color: #ffffff !important;
+    color: white !important;
 }
 
-/* Neon glow animations */
-@keyframes neon-glow {
-    0% { box-shadow: 0 0 5px #39ff14; }
-    50% { box-shadow: 0 0 20px #39ff14; }
-    100% { box-shadow: 0 0 5px #39ff14; }
+/* Social Icons */
+.social-icons a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
 }
 
-@keyframes neon-glow-orange {
-    0% { box-shadow: 0 0 5px #ff6700; }
-    50% { box-shadow: 0 0 20px #ff6700; }
-    100% { box-shadow: 0 0 5px #ff6700; }
+.social-icons a::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 14px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
 }
 
+.social-icons a:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
 
-        .social-icons a {
-            position: relative;
-            display: inline-block;
-            text-decoration: none;
-        }
-      
-        .social-icons a::after {
-            content: attr(data-title);
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            font-size: 14px;
-            padding: 5px 8px;
-            border-radius: 5px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease-in-out;
-        }
-      
-        .social-icons a:hover::after {
-            opacity: 1;
-            visibility: visible;
-        }
+/* Pagination styles */
+.pagination {
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
 
-        .pagination {
-      background-color: black;
-      padding: 10px;
-      border-radius: 5px;
-  }
+.pagination .page-item .page-link {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    position: relative;
+}
 
-  .pagination .page-item .page-link {
-      color: white;
-      background-color: black;
-      border: 1px solid white;
-      position: relative;
-  }
+/* Pagination Tooltip */
+.page-item .tooltip-text {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 14px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
 
-  /* Tooltip styling */
-  .page-item {
-      position: relative;
-  }
+.page-item:hover .tooltip-text {
+    opacity: 1;
+    visibility: visible;
+}
 
-  .page-item .tooltip-text {
-      position: absolute;
-      top: -35px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
-      font-size: 14px;
-      padding: 5px 8px;
-      border-radius: 5px;
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease-in-out;
-  }
-
-  /* Show tooltip on hover */
-  .page-item:hover .tooltip-text {
-      opacity: 1;
-      visibility: visible;
-  }
-
-  .achievements-container {
-    width: 80%;  /* Adjust width to 80% of the parent */
-    height: auto; /* Adjust height based on content */
-    min-height: 500px; /* Ensures a minimum height */
-    margin: 20px auto; /* Centers the container */
+/* Achievement Cards */
+.achievements-container {
+    width: 80%;
+    height: auto;
+    min-height: 500px;
+    margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -183,18 +188,22 @@ body.dark-mode a:hover {
 }
 
 .achievement-card {
-    width: 300px;  /* Fixed width for consistency */
-    height: 200px; /* Defined height for each card */
+    width: 300px;
+    height: 200px;
     margin: 10px;
     padding: 15px;
-    background-color: #f4f4f4;
+    background-color: #1c1c1c;
+    color: white;
     border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 
+                0 0 20px rgba(255, 255, 255, 0.1); /* Soft white glow */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: whiteGlow 2s infinite ease-in-out; /* White glow effect */
 }
+
     </style>
 </head>
 <body>
@@ -426,19 +435,19 @@ body.dark-mode a:hover {
             themeIcon.textContent = '☀️';  // Switch to Moon icon when Dark Mode
         }
     });
-// Function to add neon border effects
+// Function to add neon border effects (White Neon Glow)
 function addNeonEffect() {
     const navbar = document.querySelector(".navbar");
     const footer = document.querySelector("footer");
 
     if (navbar) {
-        navbar.style.borderBottom = "4px solid #39ff14"; // Neon Green
-        navbar.style.boxShadow = "0px 4px 20px #39ff14";
+        navbar.style.borderBottom = "4px solid white"; // White Neon
+        navbar.style.boxShadow = "0px 4px 20px white"; // White Neon Glow
     }
 
     if (footer) {
-        footer.style.borderTop = "4px solid #ff6700"; // Neon Orange
-        footer.style.boxShadow = "0px -4px 20px #ff6700";
+        footer.style.borderTop = "4px solid white"; // White Neon
+        footer.style.boxShadow = "0px -4px 20px white"; // White Neon Glow
     }
 }
 
