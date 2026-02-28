@@ -1,1 +1,0 @@
-printf("WELCOME TO MY GITHUB");
